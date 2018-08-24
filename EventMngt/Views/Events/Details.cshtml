@@ -1,0 +1,67 @@
+﻿@using EventMngt.Models
+
+@model Events
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div>
+    <h3>Detail of Event</h3>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EventName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventOrganizer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventOrganizer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventDate)
+        </dd>
+        
+
+    </dl>
+</div>
+
+<h3>
+    Registered Users For This Event
+</h3>
+
+<ul>
+    @foreach(var item in ViewBag.usersList)
+    {
+        <li>@item</li>
+    }
+</ul>
+
+<p>
+    @Html.ActionLink("Register", "Create", "Users")
+  <br/>
+    @Html.ActionLink("Back to List", "Index")
+</p>

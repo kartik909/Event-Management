@@ -1,0 +1,30 @@
+﻿@model IEnumerable<EventMngt.Models.Events>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Marlabs Events</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EventName)
+        </th>
+        @*<th></th>*@
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.EventName)
+        </td>*@
+        <td class="item1">       
+            @Html.ActionLink(item.EventName, "Details", new { id=item.EventId })     
+        </td>
+    </tr>
+}
+
+</table>
